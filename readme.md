@@ -1,6 +1,6 @@
 Curso Python de la Edan
 ======================
-El proyecto es un taller para alumnos del 
+El proyecto es un taller para alumnos 
 
 # Crear virtual enviroment
 ## windows
