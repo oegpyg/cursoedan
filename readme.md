@@ -1,5 +1,7 @@
-El proyecto es un taller para alumnos del Curos Python de la Edan
+Curso Python de la Edan
 ======================
+El proyecto es un taller para alumnos del 
+
 # Crear virtual enviroment
 ## windows
 > py -m venv ve_cursoedan
