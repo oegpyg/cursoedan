@@ -1,46 +1,46 @@
-#Crear virtual enviroment
-##windows
-    py -m venv ve_cursoedan
-##linux o mac
-    python -m venv cursoedan
+# Crear virtual enviroment
+## windows
+> py -m venv ve_cursoedan
+## linux o mac
+> python -m venv cursoedan
 
-#Activar entorno virtual
-##windows
-    .\cursoedan\Scripts\activate
+# Activar entorno virtual
+## windows
+> .\cursoedan\Scripts\activate
     
-##linux
-    source cursoedan/bin/activate
+## linux
+> source cursoedan/bin/activate
 
 
-pip install django
+> pip install django
 
 
-#Crear el proyecto django
-    django-admin startproject cursoedan
+# Crear el proyecto django
+> django-admin startproject cursoedan
 
-    cd cursoedan
+> cd cursoedan
 
-#Creamos la aplicacion para manejar el proyecto
-    django-admin startapp fixtures
-
-
-#Migracion de los datos en la base de datos
-##Carga los cambios realizados en un fixture
-    python manage.py makemigrations
-
-##Para aplicar los cambios en la base de datos
-    python manage.py migrate
-
-#Crear el usuario administrador
-    python manage.py createsuperuser
-##Obs: user: og password: @@123@@
+# Creamos la aplicacion para manejar el proyecto
+> django-admin startapp fixtures
 
 
-#Correr el servidor
-    python manage.py runserver 0.0.0.0:8000
+# Migracion de los datos en la base de datos
+## Carga los cambios realizados en un fixture
+> python manage.py makemigrations
 
-#Para instalar si descagan del git
-    pip install -r requirements.txt
+## Para aplicar los cambios en la base de datos
+> python manage.py migrate
 
-#Para entrar en el admin
-    http://localhost:8000/admin
+# Crear el usuario administrador
+> python manage.py createsuperuser
+## Obs: user: og password: @@123@@
+
+
+# Correr el servidor
+> python manage.py runserver 0.0.0.0:8000
+
+# Para instalar si descagan del git
+> pip install -r requirements.txt
+
+# Para entrar en el admin
+> http://localhost:8000/admin
