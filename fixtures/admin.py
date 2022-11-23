@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Paises, FaseGrupos
+from .models import Paises, FaseGrupos, FaseGruposPaises
 
 
 class PaisesAdmin(admin.ModelAdmin):
@@ -9,3 +9,4 @@ class PaisesAdmin(admin.ModelAdmin):
 
 admin.site.register(Paises, PaisesAdmin)
 admin.site.register(FaseGrupos)
+admin.site.register(FaseGruposPaises)

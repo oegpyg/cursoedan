@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block content%}
+{% if not user.is_authenticated  %}
+    <p>No tiene la sesion iniciada</p>
+    <a href="{% url 'login' %}" >Iniciar sesion</a>
+
+{%else%}
+    <div class="navbar">    
+    <p>Bienvenido al sistema {{user.username}}</p>
+    <img class="navbarImage" src=""/>
+    </div>
+    <div id='container' class='row-wrap'>
+        {% for i in fg %}
+        <div class="card">
+            <h4>{{i.nombre}}</h4>
+            <hr>
+            <div class="row">
+                <div class="btn">QA</div>
+                <div class="btn">EC</div>
+                <div class="btn">SEN</div>
+                <div class="btn">NL</div>
+            </div>
+        </div>
+        {%endfor%}
+        
+    </div>
+    
+{%endif%}
+{%endblock%}
+{%block js%}
+<script src="{% static 'main.js'%}" type="module"></script>
+
+{%endblock%}
