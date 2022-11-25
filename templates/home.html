@@ -9,18 +9,26 @@
 {%else%}
     <div class="navbar">    
     <p>Bienvenido al sistema {{user.username}}</p>
-    <img class="navbarImage" src=""/>
+    
+    
     </div>
     <div id='container' class='row-wrap'>
         {% for i in fg %}
         <div class="card">
-            <h4>{{i.nombre}}</h4>
+            <h4>{{i.grupo}}</h4>
             <hr>
             <div class="row">
-                <div class="btn">QA</div>
-                <div class="btn">EC</div>
-                <div class="btn">SEN</div>
-                <div class="btn">NL</div>
+                {% for o in i.paises %}
+                    <div class="btn">
+                        <img class="paisImagen" src="{{o.icono}}"/>
+                        {{o.nombre}}</div>
+                {%endfor%}
+            </div>
+            <div>
+                <div>1.__________</div>
+                <div>2.__________</div>
+                <div>3.__________</div>
+                <div>4.__________</div>
             </div>
         </div>
         {%endfor%}

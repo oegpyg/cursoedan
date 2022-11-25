@@ -30,10 +30,14 @@ body {
 .btn {
     display: flex;
     flex-direction: row !important;
-    justify-content: center;
+    justify-content: left;
     background-color: #ced6e0;
     border: 1px solid #a4b0be;
     padding: 0.4em;
     cursor: pointer;
     margin-right: 0.2em;
+}
+
+.paisImagen {
+    width: 10%;
 }
