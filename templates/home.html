@@ -15,20 +15,20 @@
     <div id='container' class='row-wrap'>
         {% for i in fg %}
         <div class="card">
-            <h4>{{i.grupo}}</h4>
+            <h4>Grupo {{i.grupo}}</h4>
             <hr>
             <div class="row">
                 {% for o in i.paises %}
-                    <div class="btn">
+                    <div id="btn-{{i.grupo}}-{{o.codigo}}-{{o.icono}}" class="btn">
                         <img class="paisImagen" src="{{o.icono}}"/>
-                        {{o.nombre}}</div>
+                        {{o.codigo}}</div>
                 {%endfor%}
             </div>
             <div>
-                <div>1.__________</div>
-                <div>2.__________</div>
-                <div>3.__________</div>
-                <div>4.__________</div>
+                <div id="seleccionado-0-{{i.grupo}}">1.__________</div>
+                <div id="seleccionado-1-{{i.grupo}}">2.__________</div>
+                <div id="seleccionado-2-{{i.grupo}}">3.__________</div>
+                <div id="seleccionado-3-{{i.grupo}}">4.__________</div>
             </div>
         </div>
         {%endfor%}
@@ -38,6 +38,23 @@
 {%endif%}
 {%endblock%}
 {%block js%}
-<script src="{% static 'main.js'%}" type="module"></script>
+<script type="text/javascript">
+    let predicciones = {};
+    let botones = document.querySelectorAll(".btn");
+    botones.forEach((btn) => {
+        btn.onclick = (event) => {
+            let group = btn.id.split("-")[1];
+            let pais = btn.id.split("-")[2];
+            let icono = btn.id.split("-")[3];
+            if (!predicciones[group]) predicciones[group] = [];
+            if (predicciones[group].length < 4 && predicciones[group].indexOf(pais) === -1) {
+                document.querySelector(`#seleccionado-${predicciones[group].length}-${group}`)
+                    .innerHTML = `${predicciones[group].length + 1} - <img class="paisImagen" src="${icono}"/>${pais}`;
+                predicciones[group].push(pais);
+            }
+        }
+    })
+
+</script>
 
 {%endblock%}

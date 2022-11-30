@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block content%}
+{% if not user.is_authenticated  %}
+    <p>No tiene la sesion iniciada</p>
+    <a href="{% url 'login' %}" >Iniciar sesion</a>
+
+{%else%}
+    <div class="navbar">    
+    <p>Bienvenido al sistema {{user.username}}</p>
+    
+    
+    </div>
+    <div id='container' class='row-wrap'>
+        
+        
+    </div>
+    
+{%endif%}
+{%endblock%}
+{%block js%}
+<script src="{% static 'main.js'%}" type="module"></script>
+
+{%endblock%}

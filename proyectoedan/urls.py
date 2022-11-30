@@ -21,7 +21,8 @@ from fixtures import views as fixturesviews
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include("django.contrib.auth.urls")),
-    #path('', TemplateView.as_view(template_name='home.html'), name='home')
-    path('', fixturesviews.home, name="home")
+    path('js', TemplateView.as_view(template_name='home2.html'), name='home2'),
+    path('', fixturesviews.home, name="home"),
+    path('api/fgp', fixturesviews.getFGP, name="api_fgp")
 
 ]
